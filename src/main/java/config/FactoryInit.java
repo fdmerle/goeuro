@@ -9,13 +9,11 @@ import pages.GoEuroPage;
  */
 public class FactoryInit {
 
-   public GoEuroPage goEuroPageFactory(DriverObject driver){
-       GoEuroPage goEuroPageExemplar= new GoEuroPage(driver);
-       PageFactory.initElements(goEuroPageExemplar.getDriverObject().getDriver(), goEuroPageExemplar);
-       return goEuroPageExemplar;
-   }
-
-
+    public GoEuroPage goEuroPageFactory(DriverObject driver) {
+        GoEuroPage goEuroPageExemplar = new GoEuroPage(driver);
+        PageFactory.initElements(goEuroPageExemplar.getDriverObject().getDriver(), goEuroPageExemplar);
+        return goEuroPageExemplar;
+    }
 
 
 }

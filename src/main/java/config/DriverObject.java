@@ -16,7 +16,7 @@ public class DriverObject {
 
     public void driverInit() {
 
-            driver = new FirefoxDriver();
+        driver = new FirefoxDriver();
 
     }
 
@@ -31,22 +31,22 @@ public class DriverObject {
 
     }
 
-public boolean waitForAttribute(WebElement element, String attribute, String attributeValue, int wait){
+    public boolean waitForAttribute(WebElement element, String attribute, String attributeValue, int wait) {
 
-for (int i=0; i<wait; i++){
-    if (element.getAttribute(attribute).equals(attributeValue)){
-        return true;
+        for (int i = 0; i < wait; i++) {
+            if (element.getAttribute(attribute).equals(attributeValue)) {
+                return true;
+            }
+            try {
+                Thread.sleep(1000);                 //1000 milliseconds is one second.
+            } catch (InterruptedException ex) {
+                Thread.currentThread().interrupt();
+            }
+
+        }
+
+        return false;
     }
-    try {
-        Thread.sleep(1000);                 //1000 milliseconds is one second.
-    } catch(InterruptedException ex) {
-        Thread.currentThread().interrupt();
-    }
-
-}
-
-            return false;
-}
 
 
     public void waitTillElementClickable(WebElement locator, int coolDown) {
